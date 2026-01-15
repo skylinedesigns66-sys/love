@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Love Page</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffebf0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    color: #ff4d6d;
+}
+
+#mainImg {
+    width: 220px;
+    margin: 20px auto;
+    display: block;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+}
+
+#noBtn {
+    background: #aaa;
+    color: white;
+    position: absolute;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Do you love me? 💕</h1>
+
+    <img id="mainImg" src="love.gif">
+
+    <div class="buttons">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const img = document.getElementById("mainImg");
+
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+yesBtn.addEventListener("click", () => {
+    img.src = "2.gif";
+    document.querySelector("h1").innerText = "I knew it! I love you too 💖";
+});
+</script>
+
+</body>
+</html>
